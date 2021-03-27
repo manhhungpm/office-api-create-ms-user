@@ -79,16 +79,10 @@ class StudentCodeRepository extends BaseRepository
 
     public function check($arr)
     {
-        $studentCode = $this->model->with('domain:id,domain_id')
-            ->where('code', $arr['code'])
-            ->whereRaw('used_number < max_user')
-            ->where(function ($query) {
-                $query->whereNull('expired_date')
-                    ->orWhere('expired_date', '>', Carbon::now());
-            })
-            ->first();
-        if ($studentCode != null) {
-            return $studentCode->domain;
+        $data = sendRequest(API_CHECK_STUDENT_CODE, $arr, "", 'POST', true);
+
+        if ($data != RESPONSE_ERROR) {
+            return true;
         }
 
         return false;
