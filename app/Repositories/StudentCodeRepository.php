@@ -82,7 +82,7 @@ class StudentCodeRepository extends BaseRepository
         $data = sendRequest(API_CHECK_STUDENT_CODE, $arr, "", 'POST', true);
 
         if ($data != RESPONSE_ERROR) {
-            return true;
+            return json_decode($data)->data;;
         }
 
         return false;
