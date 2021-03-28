@@ -40,6 +40,6 @@ define('CODE_ERROR_DELETE_ACCOUNT_WHEN_DOMAIN_ASSIGNED_FOR_USER',5);
 
 
 //API new
-define("DOMAIN_ROOT","http://hbq.me"); //sua day neu domain trang chinh thay doi
+define("DOMAIN_ROOT","http://hbq.me/api"); //sua day neu domain trang chinh thay doi
 define("API_CREATE_MS_USER", DOMAIN_ROOT . "/ms-user/guest-store-api");
 define("API_CHECK_STUDENT_CODE", DOMAIN_ROOT . "/student-code/check-api");
