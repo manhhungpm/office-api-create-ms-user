@@ -167,6 +167,8 @@
         this.checked = true
         if (data.code == SUCCESS) {
           this.isCorrectCode = true
+            console.log(data)
+            console.log(data.data)
           this.form.domain = data.data
         } else {
           this.isCorrectCode = false
