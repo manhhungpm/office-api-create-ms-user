@@ -31,7 +31,7 @@ class MSUserController extends Controller
         return processCommonResponse($result);
     }
 
-    public function guestStore(Request $request)
+    public function guestStore(StoreMSUserRequest $request)
     {
         $result = $this->msUserRepository->guestStore($request->only('code', 'displayName', 'userPrincipalName',
             'surname', 'givenName', 'password', 'domain_id', 'accountEnabled', 'username'));

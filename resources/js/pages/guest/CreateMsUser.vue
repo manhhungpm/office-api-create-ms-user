@@ -74,12 +74,12 @@
                                           v-validate="'required|max:100'"
                                           :error="errors.first('displayName') || form.errors.get('displayName')"/>
 
-                            <div class="form-group m-form__group">
-                                <label class="m-checkbox m-checkbox--state-success">
-                                    <input type="checkbox" v-model="form.accountEnabled"> Active
-                                    <span></span>
-                                </label>
-                            </div>
+<!--                            <div class="form-group m-form__group">-->
+<!--                                <label class="m-checkbox m-checkbox&#45;&#45;state-success">-->
+<!--                                    <input type="checkbox" v-model="form.accountEnabled"> Active-->
+<!--                                    <span></span>-->
+<!--                                </label>-->
+<!--                            </div>-->
 
 
 
@@ -178,6 +178,7 @@
         try {
           this.form.userPrincipalName = this.form.username + '@' + this.form.domain.id
           this.form.domain_id = this.form.domain.domain_id
+
           const code = this.form.code.slice()
           const { data } = await this.form.post('/api/ms-user/guest-store')
 
